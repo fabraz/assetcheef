@@ -24,7 +24,11 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
 end
 
+group :test do
+  gem 'cucumber'
+end
 
+gem 'capybara'
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
