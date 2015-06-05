@@ -24,6 +24,8 @@ gem 'capybara'
 
 gem 'jquery-rails'
 
+gem 'remarkable'
+
 group :test do
   gem 'cucumber'
 end
@@ -31,6 +33,9 @@ end
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
 end
+
+# Gemfile
+gem 'shoulda-matchers'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

@@ -11,7 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150519201148) do
+ActiveRecord::Schema.define(version: 20150605182221) do
+
+  create_table "asset_stocks", force: :cascade do |t|
+    t.string   "stock_local"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "assets", force: :cascade do |t|
+    t.string   "asset_type"
+    t.decimal  "asset_price"
+    t.integer  "asset_quantity"
+    t.decimal  "unique_rate"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "wallet_id"
+  end
+
+  add_index "assets", ["wallet_id"], name: "index_assets_on_wallet_id"
 
   create_table "wallets", force: :cascade do |t|
     t.datetime "created_at", null: false
