@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150605182221) do
+ActiveRecord::Schema.define(version: 20150613184857) do
 
   create_table "asset_stocks", force: :cascade do |t|
     t.string   "stock_local"
@@ -30,6 +30,16 @@ ActiveRecord::Schema.define(version: 20150605182221) do
   end
 
   add_index "assets", ["wallet_id"], name: "index_assets_on_wallet_id"
+
+  create_table "users", force: :cascade do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
 
   create_table "wallets", force: :cascade do |t|
     t.datetime "created_at", null: false
