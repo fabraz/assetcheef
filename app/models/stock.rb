@@ -1,2 +1,2 @@
-class Stock < Wallet
+class Stock < Asset
 end

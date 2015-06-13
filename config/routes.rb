@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   resources :stocks
-  resources :stocks
   resources :assets
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
   resources :wallets
