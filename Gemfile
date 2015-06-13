@@ -26,6 +26,8 @@ gem 'jquery-rails'
 
 gem 'remarkable'
 
+gem 'omniauth-facebook', '~> 1.4.1'
+
 group :test do
   gem 'cucumber'
 end
