@@ -13,6 +13,7 @@ class ExchangesController < ApplicationController
   # GET /exchanges/new
   def new
     @exchange = Exchange.new
+    json_request
   end
 
   # GET /exchanges/1/edit
@@ -45,6 +46,29 @@ class ExchangesController < ApplicationController
     redirect_to exchanges_url, notice: 'Exchange was successfully destroyed.'
   end
 
+  def json_request
+      uri = URI.parse("http://developers.agenciaideias.com.br/cotacoes/json")
+ 
+      http = Net::HTTP.new(uri.host, uri.port)
+      request = Net::HTTP::Get.new(uri.request_uri)
+ 
+      response = http.request(request)
+ 
+      if response.code == "200"
+        result = JSON.parse(response.body)
+        @exchange.assign_attributes(:dollar_quotation => result["dolar"]["cotacao"])
+        @exchange.assign_attributes(:euro_quotation => result["euro"]["cotacao"])
+        @exchange.assign_attributes(:variation_dollar => result["dolar"]["variacao"]) 
+        @exchange.assign_attributes(:variation_euro => result["euro"]["variacao"]) 
+
+
+      end
+  end
+
+  def calculate_exchange(exchange)
+    print "kdlslakldmslaskamdklsmdklamadlsmdklsamaslkdsmdlkasmdlamkdsa"
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_exchange
@@ -55,4 +79,8 @@ class ExchangesController < ApplicationController
     def exchange_params
       params.require(:exchange).permit(:exchange_type, :exchange_value)
     end
+
+
+
+
 end

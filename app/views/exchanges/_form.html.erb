@@ -11,15 +11,27 @@
     </div>
   <% end %>
 
+
   <div class="field">
-    <%= f.label :exchange_type %><br>
-    <%= f.text_field :exchange_type %>
+   <b> <%= f.label "Quotation buy values" %></b><br>
+    <%= f.label :dollar_quotation,"Dolar:  #{@exchange[:dollar_quotation]} Variation:  #{@exchange[:variation_dollar]}" %><br>
+    <%= f.label :euro_quotation,"Euro:  #{@exchange[:euro_quotation]} Variation:  #{@exchange[:variation_euro]}" %><br><br>
+
+  <div class="field">
+    <b><%= f.label :exchange_type, "Choose the exchange type." %></b><br>
+    <%= f.select :exchange_type, ['Dolar', 'Euro'] %>
   </div>
+
+
   <div class="field">
-    <%= f.label :exchange_value %><br>
+    <%= f.label :exchange_value, "Currency value to buy:" %><br>
     <%= f.text_field :exchange_value %>
+
   </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
+
