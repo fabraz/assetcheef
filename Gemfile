@@ -26,6 +26,11 @@ gem 'jquery-rails'
 
 gem 'remarkable'
 
+gem 'foundation-rails'
+group :development do
+  gem 'rails_layout'
+end
+
 gem 'omniauth-facebook', '~> 1.4.1'
 
 group :test do

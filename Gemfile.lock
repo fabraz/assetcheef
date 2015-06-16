@@ -65,6 +65,9 @@ GEM
     execjs (2.5.2)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
+    foundation-rails (5.5.2.1)
+      railties (>= 3.1.0)
+      sass (>= 3.3.0, < 3.5)
     gherkin (2.12.2)
       multi_json (~> 1.3)
     globalid (0.3.5)
@@ -128,6 +131,7 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.2)
       loofah (~> 2.0)
+    rails_layout (1.0.26)
     railties (4.2.1)
       actionpack (= 4.2.1)
       activesupport (= 4.2.1)
@@ -191,9 +195,11 @@ DEPENDENCIES
   capybara
   coffee-rails (~> 4.1.0)
   cucumber
+  foundation-rails
   jquery-rails
   omniauth-facebook (~> 1.4.1)
   rails (= 4.2.1)
+  rails_layout
   remarkable
   rspec-rails (~> 3.0)
   sass-rails (~> 5.0.0)
