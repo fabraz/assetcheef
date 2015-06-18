@@ -77,7 +77,7 @@ class ExchangesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def exchange_params
-      params.require(:exchange).permit(:exchange_type, :exchange_value)
+      params.require(:exchange).permit(:exchange_type, :initial_income)
     end
 
 

@@ -6,7 +6,8 @@
   <thead>
     <tr>
       <th>Exchange type</th>
-      <th>Exchange value</th>
+      <th>Inicial exchange investment</th>
+      <th>Buy date</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,7 +16,8 @@
     <% @exchanges.each do |exchange| %>
       <tr>
         <td><%= exchange.exchange_type %></td>
-        <td><%= exchange.exchange_value %></td>
+        <td><%= exchange.initial_income %></td>
+        <td><%= exchange.created_at %></td>
         <td><%= link_to 'Show', exchange %></td>
         <td><%= link_to 'Edit', edit_exchange_path(exchange) %></td>
         <td><%= link_to 'Destroy', exchange, method: :delete, data: { confirm: 'Are you sure?' } %></td>

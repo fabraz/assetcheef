@@ -25,10 +25,18 @@ ActiveRecord::Schema.define(version: 20150616161909) do
   add_index "assets", ["wallet_id"], name: "index_assets_on_wallet_id"
 
   create_table "exchanges", force: :cascade do |t|
+    t.string   "name"
+    t.float    "initial_income"
+    t.float    "current_income"
+    t.float    "efficiency"
+    t.datetime "buy_date"
     t.string   "exchange_type"
-    t.float    "exchange_value"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.float    "dollar_quotation"
+    t.float    "euro_quotation"
+    t.string   "variation_dollar"
+    t.string   "variation_euro"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "users", force: :cascade do |t|

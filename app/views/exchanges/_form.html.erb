@@ -13,7 +13,7 @@
 
 
   <div class="field">
-   <b> <%= f.label "Quotation buy values" %></b><br>
+   <b> <%= f.label "Quotation buy values in Real" %></b><br>
     <%= f.label :dollar_quotation,"Dolar:  #{@exchange[:dollar_quotation]} Variation:  #{@exchange[:variation_dollar]}" %><br>
     <%= f.label :euro_quotation,"Euro:  #{@exchange[:euro_quotation]} Variation:  #{@exchange[:variation_euro]}" %><br><br>
 
@@ -24,8 +24,8 @@
 
 
   <div class="field">
-    <%= f.label :exchange_value, "Currency value to buy:" %><br>
-    <%= f.text_field :exchange_value %>
+    <%= f.label :initial_income, "Currency value to buy:" %><br>
+    <%= f.text_field :initial_income %>
 
   </div>
 

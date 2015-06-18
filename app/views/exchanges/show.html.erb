@@ -6,9 +6,15 @@
 </p>
 
 <p>
-  <strong>Exchange value:</strong>
-  <%= @exchange.exchange_value %>
+  <strong>Inicial exchange investment:</strong>
+  <%= @exchange.initial_income %>
 </p>
+
+<p>
+  <strong>Buy date:</strong>
+  <%= @exchange.created_at %>
+</p>
+
 
 <%= link_to 'Edit', edit_exchange_path(@exchange) %> |
 <%= link_to 'Back', exchanges_path %>
