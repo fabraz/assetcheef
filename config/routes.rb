@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'home/index'
+
   resources :investment_funds
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
   resources :wallets
