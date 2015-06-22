@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :investment_funds
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
   resources :wallets
   # The priority is based upon order of creation: first created -> highest priority.
