@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Investment Funds</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Data de Compra</th>
+      <th>Taxa Adm</th>
+      <th>Observações</th>
+      <th>Taxa de Saída</th>
+      <th>Inicío do Fundo</th>
+      <th>Gestor</th>
+      <th>Contato do Gestor</th>
+      <th>Valor da Cota</th>
+      <th>Capital Investido</th>
+      <th>Carteira</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @investment_funds.each do |investment_fund| %>
+      <tr>
+        <td><%= investment_fund.name %></td>
+        <td><%= investment_fund.buyDate %></td>
+        <td><%= investment_fund.admTax %></td>
+        <td><%= investment_fund.aditionalInfo %></td>
+        <td><%= investment_fund.exitTax %></td>
+        <td><%= investment_fund.fundBegin %></td>
+        <td><%= investment_fund.manager %></td>
+        <td><%= investment_fund.managerContact %></td>
+        <td><%= investment_fund.shareValue %></td>
+        <td><%= investment_fund.capital %></td>
+        <td><%= investment_fund.wallet %></td>
+        <td><%= link_to 'Show', investment_fund %></td>
+        <td><%= link_to 'Edit', edit_investment_fund_path(investment_fund) %></td>
+        <td><%= link_to 'Destroy', investment_fund, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Investment fund', new_investment_fund_path %>

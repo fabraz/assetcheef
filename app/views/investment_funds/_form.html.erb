@@ -1,0 +1,61 @@
+<%= form_for(@investment_fund) do |f| %>
+  <% if @investment_fund.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@investment_fund.errors.count, "error") %> prohibited this investment_fund from being saved:</h2>
+
+      <ul>
+      <% @investment_fund.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :buyDate %><br>
+    <%= f.date_select :buyDate %>
+  </div>
+  <div class="field">
+    <%= f.label :admTax %><br>
+    <%= f.text_field :admTax %>
+  </div>
+  <div class="field">
+    <%= f.label :aditionalInfo %><br>
+    <%= f.text_field :aditionalInfo %>
+  </div>
+  <div class="field">
+    <%= f.label :exitTax %><br>
+    <%= f.text_field :exitTax %>
+  </div>
+  <div class="field">
+    <%= f.label :fundBegin %><br>
+    <%= f.date_select :fundBegin %>
+  </div>
+  <div class="field">
+    <%= f.label :manager %><br>
+    <%= f.text_field :manager %>
+  </div>
+  <div class="field">
+    <%= f.label :managerContact %><br>
+    <%= f.text_field :managerContact %>
+  </div>
+  <div class="field">
+    <%= f.label :shareValue %><br>
+    <%= f.text_field :shareValue %>
+  </div>
+  <div class="field">
+    <%= f.label :capital %><br>
+    <%= f.text_field :capital %>
+  </div>
+  <div class="field">
+    <%= f.label :wallet_id %><br>
+    <%= f.text_field :wallet_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
