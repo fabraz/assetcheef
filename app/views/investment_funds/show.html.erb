@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @investment_fund.name %>
+</p>
+
+<p>
+  <strong>Data da Compra:</strong>
+  <%= @investment_fund.buyDate %>
+</p>
+
+<p>
+  <strong>Taxa Adm:</strong>
+  <%= @investment_fund.admTax %>
+</p>
+
+<p>
+  <strong>Observações:</strong>
+  <%= @investment_fund.aditionalInfo %>
+</p>
+
+<p>
+  <strong>Taxa de Saída:</strong>
+  <%= @investment_fund.exitTax %>
+</p>
+
+<p>
+  <strong>Início do Fundo:</strong>
+  <%= @investment_fund.fundBegin %>
+</p>
+
+<p>
+  <strong>Gestor:</strong>
+  <%= @investment_fund.manager %>
+</p>
+
+<p>
+  <strong>Contado do Getor:</strong>
+  <%= @investment_fund.managerContact %>
+</p>
+
+<p>
+  <strong>Valor da Cota:</strong>
+  <%= @investment_fund.shareValue %>
+</p>
+
+<p>
+  <strong>Capital Investido:</strong>
+  <%= @investment_fund.capital %>
+</p>
+
+<p>
+  <strong>Carteira:</strong>
+  <%= @investment_fund.wallet %>
+</p>
+
+<%= link_to 'Edit', edit_investment_fund_path(@investment_fund) %> |
+<%= link_to 'Back', investment_funds_path %>

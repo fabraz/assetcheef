@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150616161909) do
+ActiveRecord::Schema.define(version: 20150622163029) do
 
   create_table "assets", force: :cascade do |t|
     t.string   "name"
@@ -38,6 +38,38 @@ ActiveRecord::Schema.define(version: 20150616161909) do
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
   end
+
+  create_table "investment_funds", force: :cascade do |t|
+    t.string   "name"
+    t.date     "buyDate"
+    t.float    "admTax"
+    t.string   "aditionalInfo"
+    t.float    "exitTax"
+    t.date     "fundBegin"
+    t.string   "manager"
+    t.string   "managerContact"
+    t.float    "shareValue"
+    t.float    "capital"
+    t.integer  "wallet_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "investment_funds", ["wallet_id"], name: "index_investment_funds_on_wallet_id"
+
+  create_table "stocks", force: :cascade do |t|
+    t.string   "name"
+    t.float    "income"
+    t.float    "efficiency"
+    t.datetime "buy_date"
+    t.float    "buy_tax"
+    t.float    "amount"
+    t.integer  "Wallet_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "stocks", ["Wallet_id"], name: "index_stocks_on_Wallet_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

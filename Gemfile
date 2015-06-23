@@ -7,6 +7,16 @@ gem 'rails', '4.2.1'
 
 gem 'sqlite3'
 
+gem 'foundation-rails'
+group :development do
+  gem 'rails_layout'
+end
+
+gem 'turbolinks'
+
+gem 'execjs'
+gem 'therubyracer'
+
 
 # Gems used only for assets and not required
 # in production environments by default.

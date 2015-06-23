@@ -12,16 +12,32 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :buyDate %><br>
-    <%= f.datetime_select :buyDate %>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :buyTax %><br>
-    <%= f.text_field :buyTax %>
+    <%= f.label :income %><br>
+    <%= f.text_field :income %>
+  </div>
+  <div class="field">
+    <%= f.label :efficiency %><br>
+    <%= f.text_field :efficiency %>
+  </div>
+  <div class="field">
+    <%= f.label :buy_date %><br>
+    <%= f.datetime_select :buy_date %>
+  </div>
+  <div class="field">
+    <%= f.label :buy_tax %><br>
+    <%= f.text_field :buy_tax %>
   </div>
   <div class="field">
     <%= f.label :amount %><br>
     <%= f.text_field :amount %>
+  </div>
+  <div class="field">
+    <%= f.label :Wallet_id %><br>
+    <%= f.text_field :Wallet_id %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -18,7 +18,7 @@ class StocksControllerTest < ActionController::TestCase
 
   test "should create stock" do
     assert_difference('Stock.count') do
-      post :create, stock: { amount: @stock.amount, buyDate: @stock.buyDate, buyTax: @stock.buyTax }
+      post :create, stock: { Wallet_id: @stock.Wallet_id, amount: @stock.amount, buy_date: @stock.buy_date, buy_tax: @stock.buy_tax, efficiency: @stock.efficiency, income: @stock.income, name: @stock.name }
     end
 
     assert_redirected_to stock_path(assigns(:stock))
@@ -35,7 +35,7 @@ class StocksControllerTest < ActionController::TestCase
   end
 
   test "should update stock" do
-    patch :update, id: @stock, stock: { amount: @stock.amount, buyDate: @stock.buyDate, buyTax: @stock.buyTax }
+    patch :update, id: @stock, stock: { Wallet_id: @stock.Wallet_id, amount: @stock.amount, buy_date: @stock.buy_date, buy_tax: @stock.buy_tax, efficiency: @stock.efficiency, income: @stock.income, name: @stock.name }
     assert_redirected_to stock_path(assigns(:stock))
   end
 
