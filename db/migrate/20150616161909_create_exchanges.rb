@@ -11,6 +11,8 @@ class CreateExchanges < ActiveRecord::Migration
       t.float :euro_quotation
       t.string :variation_dollar
       t.string :variation_euro
+      t.belongs_to :Wallet, index: true, foreign_key: true
+
       t.timestamps null: false
     end
   end
