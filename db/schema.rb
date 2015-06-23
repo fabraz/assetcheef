@@ -11,18 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150616202406) do
+ActiveRecord::Schema.define(version: 20150618201405) do
 
   create_table "stocks", force: :cascade do |t|
     t.string   "name"
-    t.float    "income"
-    t.float    "efficiency"
+    t.float    "initial_income"
+    t.float    "current_income"
     t.datetime "buy_date"
     t.float    "buy_tax"
     t.float    "amount"
     t.integer  "Wallet_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   add_index "stocks", ["Wallet_id"], name: "index_stocks_on_Wallet_id"
