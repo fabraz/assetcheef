@@ -1,14 +1,18 @@
 Rails.application.routes.draw do
+
   get 'home/index'
 
   resources :investment_funds
+
+  resources :stocks
+
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
   resources :wallets
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root "home#index"
+  root :to => 'home#index'  #RAILS 3
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

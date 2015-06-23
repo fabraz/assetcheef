@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  income: 1.5
+  efficiency: 1.5
+  buy_date: 2015-06-16 17:24:06
+  buy_tax: 1.5
+  amount: 1.5
+  Wallet_id: 
+
+two:
+  name: MyString
+  income: 1.5
+  efficiency: 1.5
+  buy_date: 2015-06-16 17:24:06
+  buy_tax: 1.5
+  amount: 1.5
+  Wallet_id: 
