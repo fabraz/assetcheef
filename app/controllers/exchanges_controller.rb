@@ -1,6 +1,6 @@
 class ExchangesController < ApplicationController
   before_action :set_exchange, only: [:show, :edit, :update, :destroy]
-  helper_method :discount
+  helper_method :discount, :convert, :convert_current_income
 
   # GET /exchanges
   def index
@@ -13,13 +13,48 @@ class ExchangesController < ApplicationController
 
   def discount
     iof_tax = 0.38
-    return (iof_tax/100)*@exchange[:initial_income]
+    @exchange.update_attributes(:discount => (iof_tax/100)*@exchange[:initial_income])
+    return @exchange[:discount]
+  end
+
+  def convert(exchange)
+
+    if exchange[:exchange_type] == "Dolar"
+      dollar_quotation = exchange[:initial_dollar_quotation]
+      initial_income = exchange[:initial_income] 
+      reais = dollar_quotation*initial_income
+    elsif exchange[:exchange_type] == "Euro"
+      euro_quotation = exchange[:initial_euro_quotation]
+      initial_income = exchange[:initial_income]
+      reais = euro_quotation*initial_income
+    end
+
+    return reais
+
+  end
+
+  def convert_current_income(exchange)
+    json_request(exchange)
+    if exchange[:exchange_type] == "Dolar"
+      dollar_quotation = exchange[:dollar_quotation]
+      initial_income = exchange[:initial_income] 
+      reais = dollar_quotation*initial_income
+    elsif exchange[:exchange_type] == "Euro"
+      euro_quotation = exchange[:euro_quotation]
+      initial_income = exchange[:initial_income]
+      reais = euro_quotation*initial_income
+    end
+    reais = reais - exchange.discount
+    return reais
+
+    
+  
   end
 
   # GET /exchanges/new
   def new
     @exchange = Exchange.new
-    json_request
+    json_request(@exchange)
   end
 
   # GET /exchanges/1/edit
@@ -52,7 +87,7 @@ class ExchangesController < ApplicationController
     redirect_to exchanges_url, notice: 'Exchange was successfully destroyed.'
   end
 
-  def json_request
+  def json_request(exchange)
       uri = URI.parse("http://developers.agenciaideias.com.br/cotacoes/json")
  
       http = Net::HTTP.new(uri.host, uri.port)
@@ -62,10 +97,13 @@ class ExchangesController < ApplicationController
  
       if response.code == "200"
         result = JSON.parse(response.body)
-        @exchange.assign_attributes(:dollar_quotation => result["dolar"]["cotacao"])
-        @exchange.assign_attributes(:euro_quotation => result["euro"]["cotacao"])
-        @exchange.assign_attributes(:variation_dollar => result["dolar"]["variacao"]) 
-        @exchange.assign_attributes(:variation_euro => result["euro"]["variacao"]) 
+        exchange.update_attributes(:dollar_quotation => result["dolar"]["cotacao"])
+        exchange.update_attributes(:euro_quotation => result["euro"]["cotacao"])
+        exchange.update_attributes(:variation_dollar => result["dolar"]["variacao"]) 
+        exchange.update_attributes(:variation_euro => result["euro"]["variacao"]) 
+
+        exchange.update_attributes(:initial_dollar_quotation => exchange[:dollar_quotation])
+        exchange.update_attributes(:initial_euro_quotation => exchange[:euro_quotation])
 
 
       end
@@ -83,7 +121,7 @@ class ExchangesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def exchange_params
-      params.require(:exchange).permit(:exchange_type, :initial_income,:Wallet_id)
+      params.require(:exchange).permit(:exchange_type, :initial_income,:Wallet_id,:dollar_quotation)
     end
 
 
