@@ -55,5 +55,16 @@
   <%= @investment_fund.wallet %>
 </p>
 
+<p>
+  <strong>Closing price:</strong>
+  <%= @investment_fund.closing_price %>
+</p>
+
+<p>
+  <strong>Closing:</strong>
+  <%= @investment_fund.closing_date %>
+</p>
+
+
 <%= link_to 'Edit', edit_investment_fund_path(@investment_fund) %> |
 <%= link_to 'Back', investment_funds_path %>

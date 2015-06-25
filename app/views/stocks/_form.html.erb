@@ -17,11 +17,11 @@
   </div>
   <div class="field">
     <%= f.label :initial_income %><br>
-    <%= f.text_field :initial_income %>
+    <%= f.number_field :initial_income, :step => 0.01 %>
   </div>
   <div class="field">
     <%= f.label :current_income %><br>
-    <%= f.text_field :current_income %>
+    <%= f.number_field :current_income, :step => 0.01 %>
   </div>
   <div class="field">
     <%= f.label :buy_date %><br>
@@ -29,15 +29,23 @@
   </div>
   <div class="field">
     <%= f.label :buy_tax %><br>
-    <%= f.text_field :buy_tax %>
+    <%= f.number_field :buy_tax, :step => 0.01 %>
   </div>
   <div class="field">
     <%= f.label :amount %><br>
-    <%= f.text_field :amount %>
+    <%= f.number_field :amount %>
   </div>
   <div class="field">
     <%= f.label :Wallet_id %><br>
-    <%= f.text_field :Wallet_id %>
+    <%= f.number_field :Wallet_id %>
+  </div>
+  <div class="field">
+    <%= f.label :closing_price %><br>
+    <%= f.number_field :closing_price, :step => 0.01 %>
+  </div>
+  <div class="field">
+    <%= f.label :closing_date %><br>
+    <%= f.date_select :closing_date %>
   </div>
   <div class="actions">
     <%= f.submit %>
