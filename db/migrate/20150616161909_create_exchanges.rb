@@ -5,6 +5,9 @@ class CreateExchanges < ActiveRecord::Migration
       t.float :initial_income
       t.float :current_income
       t.float :efficiency
+      t.float :initial_dollar_quotation
+      t.float :initial_euro_quotation
+      t.float :discount
       t.timestamp :buy_date
       t.string :exchange_type
       t.float :dollar_quotation

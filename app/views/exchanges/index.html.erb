@@ -8,7 +8,9 @@
       <th>Exchange type</th>
       <th>Inicial exchange investment</th>
       <th>Buy date</th>
-      <th>Wallet</th>
+      <th>Inicial gross value in Reais</th>
+      <th>Discount</th>
+      <th>Current liquid value in Reais</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,7 +21,9 @@
         <td><%= exchange.exchange_type %></td>
         <td><%= exchange.initial_income %></td>
         <td><%= exchange.created_at %></td>
-        <td><%= Wallet.find(exchange.Wallet_id) %></td>
+        <td><%= convert(exchange)%></td>
+        <td><%= exchange.discount %></td>
+        <td><%= convert_current_income(exchange) %></td>
         <td><%= link_to 'Show', exchange %></td>
         <td><%= link_to 'Edit', edit_exchange_path(exchange) %></td>
         <td><%= link_to 'Destroy', exchange, method: :delete, data: { confirm: 'Are you sure?' } %></td>
