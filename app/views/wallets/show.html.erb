@@ -15,5 +15,10 @@
   <%= @wallet.user.email %>
 </p>
 
+<p>
+  <strong>Stocks moving:</strong>
+  <%= stock_moving %>
+</p>
+
 <%= link_to 'Edit', edit_wallet_path(@wallet) %> |
 <%= link_to 'Back', wallets_path %>
