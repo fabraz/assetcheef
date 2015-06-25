@@ -1,3 +1,7 @@
 <h1>Home#index</h1>
 <p>Find me in app/views/home/index.html.erb</p>
 <h1>Isso é um belo de um teste</h1>
+<h1>Hello WOrld.</h1>
+<% if user_signed_in? %>
+  <div>Signed in as... <%= current_user.email %></div>
+<% end %>
