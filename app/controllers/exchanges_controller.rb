@@ -1,5 +1,6 @@
 class ExchangesController < ApplicationController
   before_action :set_exchange, only: [:show, :edit, :update, :destroy]
+  helper_method :discount
 
   # GET /exchanges
   def index
@@ -8,6 +9,11 @@ class ExchangesController < ApplicationController
 
   # GET /exchanges/1
   def show
+  end
+
+  def discount
+    iof_tax = 0.38
+    return (iof_tax/100)*@exchange[:initial_income]
   end
 
   # GET /exchanges/new
@@ -77,7 +83,7 @@ class ExchangesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def exchange_params
-      params.require(:exchange).permit(:exchange_type, :initial_income)
+      params.require(:exchange).permit(:exchange_type, :initial_income,:Wallet_id)
     end
 
 
