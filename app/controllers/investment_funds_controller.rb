@@ -55,4 +55,21 @@ class InvestmentFundsController < ApplicationController
     def investment_fund_params
       params.require(:investment_fund).permit(:name, :buyDate, :admTax, :aditionalInfo, :exitTax, :fundBegin, :manager, :managerContact, :shareValue, :capital, :wallet_id)
     end
+    
+    def profit
+      
+    end
+    
+    def ir_lion(days)
+      if(0 <= days <= 180)
+        0.25
+      elsif(181 <= days <= 361)
+        0.20
+      elsif(362 <= days <= 720)
+        0.175
+      elsif(days > 720)
+        0.15
+      else
+        "Erro"
+    end
 end
