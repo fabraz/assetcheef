@@ -3,6 +3,7 @@
   <ul class="title-area">
     <li class="name"><%= link_to 'Home', root_path %></li>
     <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+    <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
   </ul>
   <div class="top-bar-section">
     <ul>
