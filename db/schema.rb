@@ -87,10 +87,12 @@ ActiveRecord::Schema.define(version: 20150622163029) do
     t.string   "name"
     t.string   "description"
     t.integer  "user_id"
+    t.integer  "stocks_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
+  add_index "wallets", ["stocks_id"], name: "index_wallets_on_stocks_id"
   add_index "wallets", ["user_id"], name: "index_wallets_on_user_id"
 
 end
