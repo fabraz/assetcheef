@@ -2,7 +2,7 @@ class StocksController < ApplicationController
   include StocksHelper
   
   before_action :set_stock, only: [:show, :edit, :update, :destroy]
- 
+
   # GET /stocks
  
   def index
@@ -70,4 +70,3 @@ class StocksController < ApplicationController
       params.require(:stock).permit(:name, :initial_income, :current_income, :buy_date, :buy_tax, :amount, :Wallet_id, :closing_price, :closing_date)
     end
 end
-
