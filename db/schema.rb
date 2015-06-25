@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150622163029) do
+ActiveRecord::Schema.define(version: 20150625065729) do
 
   create_table "exchanges", force: :cascade do |t|
     t.string   "name"
@@ -45,6 +45,8 @@ ActiveRecord::Schema.define(version: 20150622163029) do
     t.integer  "wallet_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.decimal  "closing_price"
+    t.date     "closing_date"
   end
 
   add_index "investment_funds", ["wallet_id"], name: "index_investment_funds_on_wallet_id"
@@ -59,6 +61,8 @@ ActiveRecord::Schema.define(version: 20150622163029) do
     t.integer  "Wallet_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.decimal  "closing_price"
+    t.date     "closing_date"
   end
 
   add_index "stocks", ["Wallet_id"], name: "index_stocks_on_Wallet_id"
@@ -76,12 +80,14 @@ ActiveRecord::Schema.define(version: 20150622163029) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.integer  "wallets_id"
     t.string   "provider"
     t.string   "uid"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["wallets_id"], name: "index_users_on_wallets_id"
 
   create_table "wallets", force: :cascade do |t|
     t.string   "name"

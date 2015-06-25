@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :admTax %><br>
-    <%= f.text_field :admTax %>
+    <%= f.number_field :admTax, :step => 0.01 %>
   </div>
   <div class="field">
     <%= f.label :aditionalInfo %><br>
@@ -29,7 +29,7 @@
   </div>
   <div class="field">
     <%= f.label :exitTax %><br>
-    <%= f.text_field :exitTax %>
+    <%= f.number_field :exitTax, :step => 0.01 %>
   </div>
   <div class="field">
     <%= f.label :fundBegin %><br>
@@ -45,16 +45,24 @@
   </div>
   <div class="field">
     <%= f.label :shareValue %><br>
-    <%= f.text_field :shareValue %>
+    <%= f.number_field :shareValue, :step => 0.01 %>
   </div>
   <div class="field">
     <%= f.label :capital %><br>
-    <%= f.text_field :capital %>
+    <%= f.number_field :capital, :step => 0.01 %>
   </div>
   <div class="field">
     <%= f.label :wallet_id %><br>
-    <%= f.text_field :wallet_id %>
+    <%= f.number_field :wallet_id %>
   </div>
+  </div>
+  <div class="field">
+    <%= f.label :closing_price %><br>
+    <%= f.number_field :closing_price, :step => 0.01 %>
+  </div>
+  <div class="field">
+    <%= f.label :closing_date %><br>
+    <%= f.date_select :closing_date %>
   <div class="actions">
     <%= f.submit %>
   </div>

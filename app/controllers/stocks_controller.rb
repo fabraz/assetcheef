@@ -59,6 +59,6 @@ class StocksController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def stock_params
-      params.require(:stock).permit(:name, :income, :efficiency, :buy_date, :buy_tax, :amount, :Wallet_id)
+      params.require(:stock).permit(:name, :income, :efficiency, :buy_date, :buy_tax, :amount, :Wallet_id, :closing_price, :closing_date)
     end
 end

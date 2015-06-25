@@ -35,5 +35,15 @@
   <%= @stock.Wallet.name %>
 </p>
 
+<p>
+  <strong>Closing price:</strong>
+  <%= @stock.closing_price %>
+</p>
+
+<p>
+  <strong>Closing:</strong>
+  <%= @stock.closing_date %>
+</p>
+
 <%= link_to 'Edit', edit_stock_path(@stock) %> |
 <%= link_to 'Back', stocks_path %>

@@ -16,6 +16,8 @@
       <th>Valor da Cota</th>
       <th>Capital Investido</th>
       <th>Carteira</th>
+      <th>Valor de fechamento</th>
+      <th>Data do fechamento</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -34,6 +36,8 @@
         <td><%= investment_fund.shareValue %></td>
         <td><%= investment_fund.capital %></td>
         <td><%= investment_fund.wallet %></td>
+        <td><%= investment_fund.closing_price %></td>
+        <td><%= investment_fund.closing_date %></td>
         <td><%= link_to 'Show', investment_fund %></td>
         <td><%= link_to 'Edit', edit_investment_fund_path(investment_fund) %></td>
         <td><%= link_to 'Destroy', investment_fund, method: :delete, data: { confirm: 'Are you sure?' } %></td>
