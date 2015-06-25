@@ -35,5 +35,33 @@
   <%= @stock.Wallet.name %>
 </p>
 
+<p>
+  <strong>Gross income:</strong>
+  <%= gross_income %>
+</p>
+
+<p>
+  <strong>Liquid income:</strong>
+  <%= liquid_income %>
+</p>
+
+<p>
+  <strong>Brokerage:</strong>
+  <%= brokerage %>
+</p>
+<p>
+  <strong>Emoluments:</strong>
+  <%= emoluments %>
+</p>
+<p>
+  <strong>Custody:</strong>
+  <%= custody %>
+</p>
+<p>
+  <strong>Income Tax:</strong>
+  <%= income_tax %>
+</p>
+
+
 <%= link_to 'Edit', edit_stock_path(@stock) %> |
 <%= link_to 'Back', stocks_path %>
