@@ -1,7 +1,8 @@
 class StocksController < ApplicationController
   include StocksHelper
+  
   before_action :set_stock, only: [:show, :edit, :update, :destroy]
-  helper_method :gross_income,:liquid_income, :brokerage, :emoluments, :custody, :income_tax 
+ 
   # GET /stocks
  
   def index
@@ -10,10 +11,13 @@ class StocksController < ApplicationController
 
   # GET /stocks/1
   def show
+      @stock = Stock.find(params[:id])
   end
 
   #GET /stocks/
-
+  def stocks_list
+    @stocks = Stock.all
+  end
   
 
   # GET /stocks/new
