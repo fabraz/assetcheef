@@ -1,16 +1,19 @@
 Rails.application.routes.draw do
 
   get 'home/index'
-
+  
   resources :exchanges
 
 
   resources :investment_funds
 
+  get '/stocks/stocks_list' => 'stocks#stocks_list'
   resources :stocks
 
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
+  
   resources :wallets
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

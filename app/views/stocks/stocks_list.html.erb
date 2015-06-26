@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Stocks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Initial Income</th>
+      <th>Current Income</th>
+      <th>Amount</th>
+      <th>Gross Income</th>
+      <th>Liquid Income</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @stocks.each do |stock| %>
+      <tr>
+        <td><%= stock.name %></td>
+        <td><%= stock.initial_income %></td>
+        <td><%= stock.current_income %></td>
+        <td><%= stock.amount %></td>
+        <td><%= stock.gross_income %></td>
+        <td><%= stock.liquid_income %></td> 
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

@@ -45,5 +45,35 @@
   <%= @stock.closing_date %>
 </p>
 
+<p>
+  <strong>Gross income:</strong>
+  <%= @stock.gross_income %>
+</p>
+
+<p>
+  <strong>Liquid income:</strong>
+  <%= @stock.liquid_income %>
+</p>
+
+<p>
+  <strong>Brokerage:</strong>
+  <%= @stock.brokerage %>
+</p>
+
+<p>
+  <strong>Emoluments:</strong>
+  <%= @stock.emoluments %>
+</p>
+
+<p>
+  <strong>Custody:</strong>
+  <%= @stock.custody %>
+</p>
+
+<p>
+  <strong>Income Tax:</strong>
+  <%= @stock.income_tax %>
+</p>
+
 <%= link_to 'Edit', edit_stock_path(@stock) %> |
 <%= link_to 'Back', stocks_path %>
