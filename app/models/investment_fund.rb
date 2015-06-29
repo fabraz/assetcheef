@@ -6,7 +6,9 @@ class InvestmentFund < ActiveRecord::Base
 
   def liquid_profit
     days = (Date.today.to_date-self[:buyDate]).to_i
-    liquid_income = gross_profit*ir_tax(days)
+    years = (Date.today.year-self[:buyDate].year).to_i
+    liquid_income = gross_profit*ir_tax(days) - gross_profit*(years*(self[:admTax]/100))
+    
   end
 
   def ir_tax(days)
