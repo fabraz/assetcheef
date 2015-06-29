@@ -1,8 +1,29 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
-<h1>Isso é um belo de um teste</h1>
-<h1>Hello WOrld.</h1>
-<% if user_signed_in? %>
-  <div>Signed in as... <%= current_user.email %></div>
-<% puts "Current_User: #{current_user}"%>
-<% end %>
+<div row>
+	<div class="large-6 large-centered columns">
+		<h1 align="center">Welcome to AssetCheef!</br> <small align="center">An Investment Portifolio Management Web App</small></h1>
+	</div>
+</div>
+</br>
+
+<div class="large-2 large-centered columns">
+	<a align="center"><%= link_to 'Check your Wallet', wallets_path, class: 'button success radius' %></a>
+</div>
+
+<div class="large-3 large-centered columns">
+
+	<p align="center">
+		In your wallet you can manage:
+	</p>
+</div>
+
+<div row>
+	<div class="large-4 columns">
+		<h1 align="center">Stocks</br> <small>Keep track of your stocks and build a solid investment.</small></h1>
+	</div>
+	<div class="large-4 columns">
+		<h1 align="center">Exchange </br> <small>Bennefit with the variation of coins market.</small></h1>
+	</div>
+	<div class="large-4 columns">
+		<h1 align="center">Investment Fund <small>Investors, toguether, make more money</small></h1>
+	</div>
+
