@@ -19,7 +19,7 @@
       <tr>
         <td><%= wallet.name %></td>
         <td><%= wallet.description %></td>
-        <td><%= wallet.user %></td>
+        <td><%= wallet.user.email %></td>
         <td><%= link_to 'Show', wallet %></td>
         <td><%= link_to 'Edit', edit_wallet_path(wallet) %></td>
         <td><%= link_to 'Destroy', wallet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
