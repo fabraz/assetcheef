@@ -55,4 +55,6 @@ class InvestmentFundsController < ApplicationController
     def investment_fund_params
       params.require(:investment_fund).permit(:name, :buyDate, :admTax, :aditionalInfo, :exitTax, :fundBegin, :manager, :managerContact, :shareValue, :capital, :wallet_id, :closing_price, :closing_date)
     end
+    
+    
 end

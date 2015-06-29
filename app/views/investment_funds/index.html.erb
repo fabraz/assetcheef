@@ -2,17 +2,18 @@
 
 <h1>Listing Investment Funds</h1>
 
+<div row>
+	<div class="small-12 columns">
 <table>
   <thead>
     <tr>
       <th>Nome</th>
       <th>Data de Compra</th>
       <th>Taxa Adm</th>
+      <th>Gross Profit</th>
+      <th>Liquid Profit</th>
       <th>Observações</th>
-      <th>Taxa de Saída</th>
       <th>Inicío do Fundo</th>
-      <th>Gestor</th>
-      <th>Contato do Gestor</th>
       <th>Valor da Cota</th>
       <th>Capital Investido</th>
       <th>Carteira</th>
@@ -28,16 +29,16 @@
         <td><%= investment_fund.name %></td>
         <td><%= investment_fund.buyDate %></td>
         <td><%= investment_fund.admTax %></td>
+        <td><%= investment_fund.gross_profit %></td>
+        <td><%= investment_fund.liquid_profit %></td>
         <td><%= investment_fund.aditionalInfo %></td>
-        <td><%= investment_fund.exitTax %></td>
         <td><%= investment_fund.fundBegin %></td>
-        <td><%= investment_fund.manager %></td>
-        <td><%= investment_fund.managerContact %></td>
         <td><%= investment_fund.shareValue %></td>
         <td><%= investment_fund.capital %></td>
-        <td><%= investment_fund.wallet %></td>
+        <td><%= investment_fund.wallet.name %></td>
         <td><%= investment_fund.closing_price %></td>
         <td><%= investment_fund.closing_date %></td>
+
         <td><%= link_to 'Show', investment_fund %></td>
         <td><%= link_to 'Edit', edit_investment_fund_path(investment_fund) %></td>
         <td><%= link_to 'Destroy', investment_fund, method: :delete, data: { confirm: 'Are you sure?' } %></td>

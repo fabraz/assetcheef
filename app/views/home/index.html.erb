@@ -4,4 +4,5 @@
 <h1>Hello WOrld.</h1>
 <% if user_signed_in? %>
   <div>Signed in as... <%= current_user.email %></div>
+<% puts "Current_User: #{current_user}"%>
 <% end %>
