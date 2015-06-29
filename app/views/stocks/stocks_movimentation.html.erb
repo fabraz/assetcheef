@@ -14,7 +14,7 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-  
+
   <tbody>
     <% @stocks.each do |stock| %>
       <tr>
@@ -24,10 +24,9 @@
         <td><%= stock.amount %></td>
         <td><%= stock.gross_income %></td>
         <td><%= stock.liquid_income %></td> 
-        <%= stocks_all =+  stock.liquid_income.to_i%>
+
       </tr>
     <% end %>
-     
   </tbody>
 </table>
 
