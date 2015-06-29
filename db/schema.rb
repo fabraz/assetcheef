@@ -80,14 +80,12 @@ ActiveRecord::Schema.define(version: 20150625065729) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.integer  "wallets_id"
     t.string   "provider"
     t.string   "uid"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  add_index "users", ["wallets_id"], name: "index_users_on_wallets_id"
 
   create_table "wallets", force: :cascade do |t|
     t.string   "name"

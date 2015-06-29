@@ -18,6 +18,10 @@ class StocksController < ApplicationController
   def stocks_list
     @stocks = Stock.all
   end
+
+  def stocks_movimentation
+    @stock2 = Stock.find(params[:id])
+  end
   
 
   # GET /stocks/new

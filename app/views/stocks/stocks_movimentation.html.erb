@@ -1,33 +1,32 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Stocks Movimentation</h1>
+<h1> <%= @stock2.name%> Movimentation</h1>
+
+<p>
+ <strong>Gross Income:</strong>
+ <%= @stock2.gross_income.round(2) %>  R$ 
+</p>
+
+<p>
+  <strong>Liquid Income:</strong>
+ <%= @stock2.liquid_income.round(2) %> R$
+</p>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Initial Income</th>
-      <th>Current Income</th>
-      <th>Amount</th>
-      <th>Gross Income</th>
-      <th>Liquid Income</th>
-      <th colspan="3"></th>
+      <th>Brokerage</th>
+      <th>Emoluments</th>
+      <th>Custody</th>
+      <th>Income Tax</th>
     </tr>
-  </thead>
-
+  </thead>  
   <tbody>
-    <% @stocks.each do |stock| %>
       <tr>
-        <td><%= stock.name %></td>
-        <td><%= stock.initial_income %></td>
-        <td><%= stock.current_income %></td>
-        <td><%= stock.amount %></td>
-        <td><%= stock.gross_income %></td>
-        <td><%= stock.liquid_income %></td> 
-
-      </tr>
-    <% end %>
+        <td><%= @stock2.brokerage.round(2)  %> R$</td>
+        <td><%= @stock2.emoluments.round(2) %> R$</td>
+        <td><%= @stock2.custody.round(2)  %> R$</td>
+        <td><%= @stock2.income_tax.round(2) %> R$</td>
+      </tr>     
   </tbody>
 </table>
-
-<br>

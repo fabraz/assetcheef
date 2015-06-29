@@ -45,6 +45,6 @@
   <%= @stock.closing_date %>
 </p>
 
-<%= link_to 'Moviment', stocks_stocks_movimentation_path(@stock)  %>
+<%= link_to 'Moviment', stocks_movimentation_stock_path(@stock)  %>
 <%= link_to 'Edit', edit_stock_path(@stock) %> |
 <%= link_to 'Back', stocks_path %>

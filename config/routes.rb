@@ -7,9 +7,15 @@ Rails.application.routes.draw do
 
   resources :investment_funds
 
-  get '/stocks/stocks_movimentation' => 'stocks#stocks_movimentation'
-  get '/stocks/stocks_list' => 'stocks#stocks_list'
-  resources :stocks
+ resources :stocks do 
+    member do
+      get :stocks_movimentation
+    end
+    
+    collection do
+      get :stocks_list
+    end
+  end
 
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
   
