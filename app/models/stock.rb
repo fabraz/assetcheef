@@ -71,5 +71,13 @@ class Stock < ActiveRecord::Base
     return liquid_income = gross_income - (income_tax + custody + emoluments + brokerage )
   end
 
+  def total_liquid_income
+    all_liquid_income
+    stocks = Stocks.all
+    stocks.each do |stock|
+      all_liquid_income =+ stock.liquid_income
+    end
+    return all_liquid_income 
+  end
 
 end
