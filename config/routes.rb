@@ -2,7 +2,15 @@ Rails.application.routes.draw do
 
   get 'home/index'
   
-  resources :exchanges
+  resources :exchanges do
+    member do
+      get :exchanges_movimentation
+    end
+
+    collection do
+      get :exchanges_list
+    end
+  end
 
 
   resources :investment_funds
