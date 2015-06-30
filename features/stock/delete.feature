@@ -9,6 +9,6 @@ Feature: Deleting Stocks
 	    And I have a Wallet
 	    And there's a sample stock
 		When I am on the stocks
-		And I click on Destroy link
+		And I click on Destroy stock link
 		Then the stock should not be there
 		

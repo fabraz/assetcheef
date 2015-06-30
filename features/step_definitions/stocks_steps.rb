@@ -12,7 +12,7 @@ When(/^I am on the stocks_show$/) do
   visit stock_path(@stock)
 end
 
-When(/^I click on Destroy link$/) do
+When(/^I click on Destroy stock link$/) do
   Stock.destroy(@stock.id)
 end
 
