@@ -1,7 +1,7 @@
 # features/step_definitions/stocks_steps.rb
 
-Given(/^there's a stock named "(.*?)"/) do |stock|
-  @stock = FactoryGirl.create(:stock, {name: name})
+Given(/^there's a sample stock/) do
+  @stock = FactoryGirl.create(:stock)
 end
 
 When(/^I am on the stocks$/) do
@@ -24,10 +24,15 @@ When(/^I click on Create Stock link$/) do
   Stock.create(@stock.id)
 end
 
-Then(/^I should see the "(.*?)" stock$/) do |title|
-  @stock= Stock.find_by_name(name)
+When(/^I click the Edit link$/) do
+  visit edit_stock_path(@stock)
+end
 
-  expect(page).to have_content(@stock.name)
+
+Then(/^I should see the "(.*?)" stock$/) do |name|
+  #@stock= Stock.find_by_name(name)
+
+  expect(page).to have_content(name)
 end
 
 Then(/^I should not see "(.+)"$/) do |text|
@@ -36,4 +41,8 @@ end
 
 Then(/^the stock should not be there$/) do
   expect { Stocks.find(@stock.id) }.to raise_error
+end
+
+Then(/^I should be in the Edit Stock page$/) do
+  expect(page).to have_content("Editing Stock")
 end
