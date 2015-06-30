@@ -6,6 +6,10 @@ When(/^I click on New Investment fund link$/) do
   visit new_investment_fund_path
 end
 
+When(/^I click the Edit investment fund link$/) do
+  visit edit_investment_fund_path(@investment_fund)
+end
+
 Given(/^there's a sample investment fund$/) do
   @investment_fund = FactoryGirl.create(:investment_fund)
 end
@@ -16,4 +20,8 @@ end
 
 Then(/^the investment_fund should not be there$/) do
   expect { InvestmentFund.find(@investment_fund.id) }.to raise_error
+end
+
+Then(/^I should be in the Edit Investment_fund page$/) do
+  expect(page).to have_content("Editing Investment Fund")
 end
