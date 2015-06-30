@@ -10,6 +10,12 @@ When /^(?:|I )select datetime "([^ ]*) ([^ ]*) ([^ ]*) - ([^:]*):([^"]*)" as the
   select(minute, :from => "#{field}_5i")
 end
 
+When /^(?:|I )select date "([^ ]*) ([^ ]*) ([^ ]*)" as the "([^"]*)"$/ do |year, month, day, field|
+  select(year,   :from => "#{field}_1i")
+  select(month,  :from => "#{field}_2i")
+  select(day,    :from => "#{field}_3i")
+end
+
 When(/^I press the "(.+)" button$/) do |text|
   click_button text
 end
