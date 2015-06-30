@@ -6,6 +6,7 @@ Feature: Stock Creation
   Scenario: Should not create stocks without login
     Given I am on the stocks
     Then I should not see "New Stock"
+    And I should see "You need to sign in or sign up before continuing."
 
   Scenario: stock creation
     Given I am an user
