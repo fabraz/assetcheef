@@ -6,8 +6,9 @@ Feature: Deleting Stocks
 	Scenario: Should delete a stock
 		Given I am an user
 	    And I am signed in
+	    And I have a Wallet
+	    And there's a sample stock
 		When I am on the stocks
-	    And there's a stock named "Stock"
 		And I click on Destroy link
 		Then the stock should not be there
 		
