@@ -1,4 +1,7 @@
 Feature: View Stock
+  In order to interact with stocks
+  As an user
+  I should see the stocks
 	
 	Scenario: Viewing application's stocks
 		Given I am an user
