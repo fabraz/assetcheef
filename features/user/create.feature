@@ -10,5 +10,5 @@ Feature: User Creation
     And I fill in "user_password" with "password"
     And I fill in "user_password_confirmation" with "password"
     When I press the "Sign up" button
-    Then I should see "Isso é um belo de um teste"
+    Then I should see " Welcome to AssetCheef!"
     And I should see "Welcome! You have signed up successfully."
