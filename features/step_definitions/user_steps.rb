@@ -13,3 +13,7 @@ end
 When(/^I press the "(.+)" button$/) do |text|
   click_button text
 end
+
+When(/^I click on Sign up link$/) do
+  visit new_user_registration_path
+end
