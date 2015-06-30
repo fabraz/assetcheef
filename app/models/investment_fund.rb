@@ -5,7 +5,7 @@ class InvestmentFund < ActiveRecord::Base
   end
 
   def liquid_profit
-    liquid_income = gross_profit*ir_tax(days_of_investment) - gross_profit*(years_of_investment*(self[:admTax]/100))
+    liquid_income = gross_profit - (gross_profit*ir_tax(days_of_investment) + gross_profit*(years_of_investment*(self[:admTax]/100)))
   end
 
   def years_of_investment
