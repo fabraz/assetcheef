@@ -14,7 +14,15 @@ When(/^I click on Destroy wallet link$/) do
   Wallet.destroy(@wallet.id)
 end
 
+When(/^I click the Edit wallet link$/) do
+  visit edit_wallet_path(@wallet)
+end
+
 Then(/^the wallet should not be there$/) do
   expect { Wallet.find(@wallet.id) }.to raise_error
+end
+
+Then(/^I should be in the Edit Wallet page$/) do
+  expect(page).to have_content("Editing Wallet")
 end
 

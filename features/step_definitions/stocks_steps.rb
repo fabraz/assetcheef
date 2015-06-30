@@ -28,7 +28,7 @@ When(/^I click on Create Stock link$/) do
   Stock.create(@stock.id)
 end
 
-When(/^I click the Edit link$/) do
+When(/^I click the Edit stock link$/) do
   visit edit_stock_path(@stock)
 end
 
