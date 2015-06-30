@@ -47,7 +47,6 @@ class ExchangesController < ApplicationController
 
   def discount
     iof_tax = 0.38
-    puts "HAHAHAHHAHA #{@exchange}"
     initial_income = @exchange[:initial_income]
     discount = (iof_tax/100)*initial_income
     return discount
