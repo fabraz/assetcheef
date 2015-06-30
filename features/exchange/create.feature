@@ -16,8 +16,8 @@ Feature: Exchange creation
 	    And I click on New Exchange link
 	    And I select Exchange Type "Dolar" as the "exchange_exchange_type"
 	    And I fill in "exchange_initial_income" with "1000"
-	    When I press the "Create Exchange" button
+	    When I press the "Update Exchange" button
 	    Then I should see "Exchange type: Dolar"
 	    And I should see "Inicial exchange investment: 1000.0"
-	    And I should see "Exchange was successfully created."
+	    And I should see "Exchange was successfully updated."
 
