@@ -110,10 +110,6 @@ class ExchangesController < ApplicationController
       end
   end
 
-  def calculate_exchange(exchange)
-    print "kdlslakldmslaskamdklsmdklamadlsmdklsamaslkdsmdlkasmdlamkdsa"
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_exchange
