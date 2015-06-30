@@ -8,6 +8,10 @@ When(/^I am on the stocks$/) do
   visit stocks_path
 end
 
+When(/^I am on the stocks_show$/) do
+  visit stock_path(@stock)
+end
+
 When(/^I click on Destroy link$/) do
   Stock.destroy(@stock.id)
 end
@@ -26,6 +30,10 @@ end
 
 When(/^I click the Edit link$/) do
   visit edit_stock_path(@stock)
+end
+
+When(/^I click on Moviment link$/) do
+  visit stocks_movimentation_stock_path(@stock)
 end
 
 
