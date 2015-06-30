@@ -1,3 +1,4 @@
+<div class="row" > 
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -45,6 +46,11 @@
   <%= @stock.closing_date %>
 </p>
 
-<%= link_to 'Moviment', stocks_movimentation_stock_path(@stock)  %>
-<%= link_to 'Edit', edit_stock_path(@stock) %> |
-<%= link_to 'Back', stocks_path %>
+<%= link_to 'Edit', edit_stock_path(@stock), class: 'button info tiny' %> |
+<%= link_to 'Back', stocks_path, class: 'button info tiny' %>
+
+<br>
+<p>
+<strong>See the moviment of your Stock here ! </strong>
+</p>
+<%= link_to 'Moviment', stocks_movimentation_stock_path(@stock), class: 'button success small'   %>

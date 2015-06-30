@@ -6,6 +6,10 @@ Given(/^I am on the wallets$/) do
   visit wallets_path
 end
 
+When(/^I am on the wallets_show$/) do
+  visit wallet_path(@wallet)
+end
+
 When(/^I click on New Wallet link$/) do
   visit new_wallet_path
 end
@@ -16,6 +20,22 @@ end
 
 When(/^I click the Edit wallet link$/) do
   visit edit_wallet_path(@wallet)
+end
+
+When(/^I click on Your Exchanges link$/) do
+  visit exchanges_path
+end
+
+When(/^I click on Your Investment Funds link$/) do
+  visit investment_funds_path
+end
+
+When(/^I click on Your Stocks link$/) do
+  visit stocks_path
+end
+
+When(/^I click on Stock Moviment link$/) do
+  visit stocks_list_stocks_path
 end
 
 Then(/^the wallet should not be there$/) do

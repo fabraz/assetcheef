@@ -1,3 +1,4 @@
+<div class="row" > 
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -16,6 +17,20 @@
 </p>
 
 
-<%= link_to  'Stock Movement', stocks_list_stocks_path %>
-<%= link_to 'Edit', edit_wallet_path(@wallet) %> |
-<%= link_to 'Back', wallets_path %>
+<%= link_to 'Edit', edit_wallet_path(@wallet), class: 'button info tiny' %> |
+<%= link_to 'Back', wallets_path, class: 'button info tiny' %>
+
+<br>
+
+<p>
+	 <strong>Create, edit and follow all your assets here</strong>
+</p>	
+<%= link_to 'Your Exchanges', exchanges_path,  class: 'button alert radius small' %>
+<%= link_to 'Your Investment Funds', investment_funds_path,  class: 'button alert radius small'%>
+<%= link_to 'Your Stocks', stocks_path,  class: 'button alert radius small' %>
+
+<br>
+ <strong>You can see whats is going with your assets here !</strong>
+<p>
+</p>
+<%= link_to  'Stock Movement', stocks_list_stocks_path, class: 'button success radius small' %>

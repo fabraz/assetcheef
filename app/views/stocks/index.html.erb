@@ -27,9 +27,9 @@
         <td><%= stock.buy_date %></td>
         <td><%= stock.buy_tax %></td>
         <td><%= stock.amount %></td>
+        <td><%= stock.Wallet.name %></td>
         <td><%= stock.closing_price %></td>
         <td><%= stock.closing_date %></td>
-        <td><%= stock.Wallet.name %></td>
         <td><%= link_to 'Show', stock %></td>
         <td><%= link_to 'Edit', edit_stock_path(stock) %></td>
         <td><%= link_to 'Destroy', stock, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -40,4 +40,4 @@
 
 <br>
 
-<%= link_to 'New Stock', new_stock_path %>
+<%= link_to 'New Stock', new_stock_path, class: 'button success radius small'%>
